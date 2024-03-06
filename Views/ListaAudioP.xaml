@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AudioRecorder.Views.ListaAudioP"
+             Title="Listado de Audios">
+    <ContentPage.Content >
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="10,0,10,10" CornerRadius="0">
+                <Label Text="Seleccione un elemento y luego deslizar hacia la izquierda para reproducir o eliminar audio" HorizontalTextAlignment="Start" TextColor="White" FontSize="16"/>
+            </Frame>
+            <ListView x:Name="listaAudios" >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                            <SwipeView>
+                                <SwipeView.RightItems>
+                                    <SwipeItems >
+                                        <SwipeItem x:Name="btndelete" BackgroundColor="Black" 
+                                               />
+                                        <SwipeItem x:Name="btnplay"  BackgroundColor="Black"
+                                                />
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+
+                                <StackLayout>
+                                    <Grid>
+                                        <Label Grid.Column="0"
+                                            Text="{Binding Id}"></Label>
+                                        <Label Grid.Column="1"
+                                            Text="{Binding Date}"></Label>
+                                        <Label Grid.Column="2"
+                                            Text="{Binding Descripcion}"></Label>
+                                    </Grid>
+                                </StackLayout>
+
+                            </SwipeView>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

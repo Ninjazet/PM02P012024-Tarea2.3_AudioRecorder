@@ -1,4 +1,17 @@
-﻿namespace AudioRecorder
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Plugin.AudioRecorder;
+using System.IO;
+
+
+
+
+
+namespace AudioRecorder
 {
     public partial class MainPage : ContentPage
     {
@@ -11,15 +24,12 @@
 
         private void OnCounterClicked(object sender, EventArgs e)
         {
-            count++;
+            
+        }
+        private void BtnlistaAudio_Clicked(object sender, EventArgs e)
+        {
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
         }
     }
-
+    
 }
