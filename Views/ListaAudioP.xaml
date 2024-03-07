@@ -8,40 +8,40 @@
             <Frame BackgroundColor="#2196F3" Padding="10,0,10,10" CornerRadius="0">
                 <Label Text="Seleccione un elemento y luego deslizar hacia la izquierda para reproducir o eliminar audio" HorizontalTextAlignment="Start" TextColor="White" FontSize="16"/>
             </Frame>
-            <ListView x:Name="listaAudios" >
+            <ListView x:Name="listaAudios" ItemTapped="listaAudios_ItemTapped"  >
 
                 <ListView.ItemTemplate>
-                    <DataTemplate>
+                <DataTemplate>
 
-                        <ViewCell>
+                    <ViewCell>
 
-                            <SwipeView>
-                                <SwipeView.RightItems>
-                                    <SwipeItems >
-                                        <SwipeItem x:Name="btndelete" BackgroundColor="Black" 
-                                               />
-                                        <SwipeItem x:Name="btnplay"  BackgroundColor="Black"
-                                                />
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems >
+                                        <SwipeItem Text="Eliminar" BackgroundColor="Red" Invoked="btndelete_Invoked" />
+                                        <SwipeItem Text="Reproducir" BackgroundColor="Green" Invoked="btnplay_Invoked" />
                                     </SwipeItems>
-                                </SwipeView.RightItems>
+                            </SwipeView.RightItems>
 
-                                <StackLayout>
-                                    <Grid>
-                                        <Label Grid.Column="0"
+                            <StackLayout>
+                                <Grid>
+                                    <Label Grid.Column="0"
                                             Text="{Binding Id}"></Label>
-                                        <Label Grid.Column="1"
+                                    <Label Grid.Column="1"
                                             Text="{Binding Date}"></Label>
-                                        <Label Grid.Column="2"
+                                    <Label Grid.Column="2"
                                             Text="{Binding Descripcion}"></Label>
-                                    </Grid>
-                                </StackLayout>
+                                </Grid>
+                            </StackLayout>
 
-                            </SwipeView>
+                        </SwipeView>
 
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
             </ListView>
+
 
 
 

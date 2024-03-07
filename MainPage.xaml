@@ -3,19 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AudioRecorder.MainPage">
 
-    <StackLayout>
+    <StackLayout VerticalOptions="StartAndExpand">
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Grabadora de Audio" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
         <Image Source="voz.png" Margin="30,30,30,30"/>
-        <Label Text="Descripción" FontSize="Title" Padding="30,10,30,10"/>
+        <Label Text="Descripción" FontSize="Title" Padding="30,20,30,10"/> 
         <Entry Placeholder="Ingrese una descripción" Margin="30,0,30,0" x:Name="txtdescripcion"/>
         <Grid Margin="20,0,20,0">
-            <Button Text="Grabar Audio" Grid.Column="0" x:Name="btnGrabar" />
-            <Button Text="Detener Audio" Grid.Column="1" x:Name="btnDetener"  IsEnabled="False"/>
-            <Button  Text="Listar Audios" Grid.Row="1" Grid.ColumnSpan="2" x:Name="btnlistaAudio" Clicked="BtnlistaAudio_Clicked"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Grabar Audio" x:Name="btnGrabar" Clicked="btnGrabar_Clicked" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Detener Audio" Margin="10,0,0,0" x:Name="btnDetener" Clicked="btnDetener_Clicked" IsEnabled="False" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
         </Grid>
+        <Button Text="Listar Audios" Margin="20,10,20,0" x:Name="btnlistaAudio" Clicked="BtnlistaAudio_Clicked" VerticalOptions="Start" HorizontalOptions="FillAndExpand"/>
     </StackLayout>
-    
 
 </ContentPage>
