@@ -66,6 +66,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\audio.png" />
 	  <None Remove="Resources\Images\botondelete.png" />
 	  <None Remove="Resources\Images\botonplay.png" />
 	  <None Remove="Resources\Images\voz.png" />

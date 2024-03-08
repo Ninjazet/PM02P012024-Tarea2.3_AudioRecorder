@@ -8,10 +8,6 @@ using Plugin.AudioRecorder;
 using System.IO;
 
 
-
-
-
-
 namespace AudioRecorder
 {
     public partial class MainPage : ContentPage
@@ -103,7 +99,7 @@ namespace AudioRecorder
             audio.Date = DateTime.Now;
 
             var resultado = await App.Basedatos.GrabarAudio(audio);
-               
+
             if (resultado == 1)
             {
                 await DisplayAlert("", "El audio " + audio.Descripcion + " guardado en la ruta " + audio.Url, "ok");
